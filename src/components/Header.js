@@ -25,13 +25,17 @@ const Header = () => {
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
       <img className='w-44' src="/Netflix_Logo.png" alt="logo"></img>
        
-      <div className='flex px-7 py-2 space-x-4'>
-        <button className=' bg-red-600  rounded-lg text-center h-8 my-4' onClick={signingUserOut}>
-          Signout
-          </button>
-        <img className='w-14 h-14 ' src="./UserLogo123.jpeg" alt="userLogo"></img>
+      
+      {window.location.pathname !== "/" && (
+        <div className='flex px-7 py-2 space-x-4'>
+        <button className='text-white h-8 my-4 hover:text-red-700' onClick={signingUserOut}>
+          (Signout)
+          </button> 
+          <img className='w-14 h-14 ' src="./UserLogo123.jpeg" alt="userLogo"></img>
+          </div>)}
         
-      </div>
+        
+      
     </div>
   )
 }
