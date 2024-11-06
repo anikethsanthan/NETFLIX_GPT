@@ -15,13 +15,13 @@ const Login = () => {
   const toggleSignInForm=()=>{
    setIsSignInForm(!isSignInForm);
   };
-  // const name=useRef(null);
+  const name=useRef(null);
   const email=useRef(null);
   const password=useRef(null);
 
   const handleButtonClick=()=>{
 
-    const message= checkValidData(email.current.value, password.current.value);
+    const message= checkValidData(email.current.value, password.current.value, name.current?.value);
     setErrorMessage(message);
 
     if(message) return;
@@ -29,6 +29,7 @@ const Login = () => {
     if(!isSignInForm){
       //signup Logic
          createUserWithEmailAndPassword(
+          
           auth,
          email.current.value, 
          password.current.value)
@@ -80,11 +81,14 @@ const Login = () => {
         <h1 className='font-bold text-3xl p-2 my-6'>{isSignInForm?  "Sign In":"Let's sign you up !"}</h1>
         {
           isSignInForm? null:
+
+          <input 
+          ref={name}
+          type="text" 
+          placeholder="Email Address" 
+          className='p-4 my-2 w-full  bg-transparent  border-2 border-indigo-500/50 rounded-lg'/>
         
-        <input 
-        type="text" 
-        placeholder=" Full name" 
-        className='p-4 my-2 w-full  bg-transparent  border-2 border-indigo-500/50 rounded-lg'/> }
+         }
         <input 
         ref={email}
         type="text" 
