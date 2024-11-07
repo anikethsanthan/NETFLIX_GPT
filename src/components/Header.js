@@ -62,9 +62,8 @@ const Header = () => {
            :
            <button onClick={handleGptSearch}>
             <p  
-            className='py-2 px-4  my-6 mr-4   rounded-xl
-            text-lg font-semibold  text-white
-             bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500
+            className='py-2 px-4  my-6 mr-4 hover:scale-110
+            text-lg font-semibold  text-white typing
              h-12 text-center'>
               Go to Browse Page
               </p>
