@@ -2,7 +2,7 @@
     method: 'GET',
     headers: {
       accept: 'application/json',
-      // Authorization: 'Bearer '+ process.env.REACT_APP_TMDB_KEY
+      Authorization: 'Bearer '+ process.env.REACT_APP_TMDB_KEY
     }
   }; 
 
@@ -17,6 +17,6 @@
     {identifier:"hindi" , name: "Hindi"},];
 
 
-    // export const OPENAI_KEY=process.env.REACT_APP_OPENAI_KEY;
+    export const OPENAI_KEY=process.env.REACT_APP_OPENAI_KEY;
 
     export const searchAPI='https://api.themoviedb.org/3/search/movie?query=jigra&include_adult=false&language=en-US&page=1';
