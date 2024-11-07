@@ -13,6 +13,7 @@ import { addGptMovieResult } from '../utils/gptSlice';
 const GptSearchBar = () => {
     const dispatch=useDispatch();
     const langKey=useSelector((store)=>store.config.lang)
+
     const handleLanguageCHange=(e)=>{
         dispatch(chageLanguage(e.target.value))
       };
@@ -25,12 +26,10 @@ const GptSearchBar = () => {
             '&include_adult=false&language=en-US&page=1', API_Options);
             
         const json=await data.json();
-        console.log("ne CONSOLE"+json);
-        return json.result;
+        return json.results;
     }
 
       const handleGPTsearchClick=async()=>{
-       console.log(searchText.current.value);
        
        const searchQuery="Act as a movie recommendation system and search movies for the query: "
        +searchText.current.value+
@@ -42,14 +41,13 @@ const GptSearchBar = () => {
         
       })
        
-      console.log(GPTResults.choices);
 
       const gptMovies=GPTResults.choices?.[0]?.message?.content.split(", ");
 
       
 
       const promiseArray= gptMovies.map((movie)=>searchMovieTMDB(movie));
-      console.log("PromiseARRAY"+promiseArray)
+      
 
       const tmdbResults= await Promise.all(promiseArray);
       
