@@ -52,7 +52,7 @@ const Header = () => {
         <div className='flex px-7 py-2 space-x-4'>
          
           {showGptV ?<> 
-           <p  className='py-2 px-4 py-6 m-2 text-white text-lg font-semibold typing text-white'>Ask AI your next watch</p>
+           <p  className=' px-4 py-6 m-2  text-lg font-semibold typing text-white'>Ask AI your next watch</p>
            <button 
           className='py-2 px-4 m-2 text-white hover:scale-110' onClick={handleGptSearch}>
             <img alt="GPT-logo" className='w-14 rounded-3xl '
@@ -62,7 +62,7 @@ const Header = () => {
            :
            <button onClick={handleGptSearch}>
             <p  
-            className='py-2 px-4  my-6 mr-4 text-white  rounded-xl
+            className='py-2 px-4  my-6 mr-4   rounded-xl
             text-lg font-semibold  text-white
              bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500
              h-12 text-center'>
