@@ -17,7 +17,7 @@ const showGpt=useSelector((store)=>store.gpt.showGptSearch);
   useTopRatedMovies();
   
   return (
-    <div >
+    <div  >
       <Header/>
       {!showGpt? <GptSearch/> : <>
         <MainContainer/>

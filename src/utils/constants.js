@@ -2,7 +2,7 @@
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxOTgxYjhhMjc0NTlhYTc1MjY4NWU0OTM0NWM1YTYyMSIsIm5iZiI6MTczMDg4NDA1Ni43MDkzMjEzLCJzdWIiOiI2NzJiMmVkMDc5NjdlMDYxMTBlY2MwYzAiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.2eF4HBWjWGXI3LscKl_R3zcOyr93naCMnyg5XZHOHmA'
+      Authorization: 'Bearer '+ process.env.REACT_APP_TMDB_KEY
     }
   }; 
 
@@ -14,4 +14,9 @@
 
   export const SUPPORTED_LANGUAGES=[
     {identifier:"english" , name: "English"},
-    {identifier:"hindi" , name: "Hindi"},]
+    {identifier:"hindi" , name: "Hindi"},];
+
+
+    export const OPENAI_KEY=process.env.REACT_APP_OPENAI_KEY;
+
+    export const searchAPI='https://api.themoviedb.org/3/search/movie?query=jigra&include_adult=false&language=en-US&page=1';
