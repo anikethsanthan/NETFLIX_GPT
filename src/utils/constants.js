@@ -10,3 +10,8 @@
   export const popularMovies='https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
   export const upcomingMOvies='https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
   export const topRatedMovies='https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
+
+
+  export const SUPPORTED_LANGUAGES=[
+    {identifier:"english" , name: "English"},
+    {identifier:"hindi" , name: "Hindi"},]
