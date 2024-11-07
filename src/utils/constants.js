@@ -8,3 +8,5 @@
 
   export const IMG_CDN="https://image.tmdb.org/t/p/w780";
   export const popularMovies='https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
+  export const upcomingMOvies='https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
+  export const topRatedMovies='https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
