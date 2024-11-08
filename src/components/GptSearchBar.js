@@ -66,7 +66,7 @@ const GptSearchBar = () => {
      className='p-6 pt-[10%] grid grid-cols-12' 
      onSubmit={(e)=> e.preventDefault()}>
      <select onChange={handleLanguageCHange}
-          className='p-1 m-3 col-span-1 bg-gray-900 text-white  rounded-lg ' >
+          className='p-1 m-1 md:m-3 col-span-1 bg-gray-900 text-white  rounded-lg hidden lg:block ' >
             {SUPPORTED_LANGUAGES.map(lang=><option key={lang.identifier} value={lang.identifier}>
               {lang.name}
             </option>)}
@@ -74,11 +74,11 @@ const GptSearchBar = () => {
 
         <input  
         ref={searchText}
-        className="p-4 m-4 col-span-8 border-4 border-indigo-500/75" 
+        className=" p-2 md:p-4  m-1 md:m-4 col-span-9 md:col-span-8 border-4 border-indigo-500/75" 
         type="text" 
         placeholder={lang[langKey].gptSearchPlaceholder}></input>    
         <button 
-        className="p-4 m-4 col-span-3 ml-2
+        className="p-2 md:p-4  m-1 md:m-4 col-span-3 md:col-span-3 ml-2
          bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
           text-white rounded-lg " onClick={handleGPTsearchClick} >
              {lang[langKey].search}

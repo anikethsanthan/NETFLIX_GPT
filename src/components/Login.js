@@ -12,6 +12,7 @@ const Login = () => {
   const [isSignInForm,setIsSignInForm]=useState(true);
   const [errorMessage,setErrorMessage]=useState(null);
   const dispatch =useDispatch();
+  
 
   const toggleSignInForm=()=>{
    setIsSignInForm(!isSignInForm);
@@ -84,11 +85,11 @@ const Login = () => {
       <Header/>
 
       <div className='absolute'>
-        <img src="./Background_Img.jpg" alt="BackgroundImg"></img>
+        <img src="./Background_Img.jpg" alt="BackgroundImg" className='w-screen h-screen object-cover'></img>
       </div>
 
       <form onSubmit={(e)=>e.preventDefault()}
-      className=' w-96 h-auto absolute p-12 bg-black bg-opacity-80  my-44 mx-auto right-0 left-0 text-white rounded-lg'>
+      className='w-80 md:w-96 h-auto absolute p-12 bg-black bg-opacity-80 my-32 md:my-44 mx-auto right-0 left-0 text-white rounded-lg'>
         <h1 className='font-bold text-3xl p-2 my-6'>{isSignInForm?  "Sign In":"Let's sign you up !"}</h1>
         {
           isSignInForm? null:
@@ -96,7 +97,7 @@ const Login = () => {
           <input 
           ref={name}
           type="text" 
-          placeholder="Email Address" 
+          placeholder="Full Name" 
           className='p-4 my-2 w-full  bg-transparent  border-2 border-indigo-500/50 rounded-lg'/>
         
          }
