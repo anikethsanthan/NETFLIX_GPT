@@ -33,7 +33,7 @@ const GptSearchBar = () => {
        
        const searchQuery="Act as a movie recommendation system and search movies for the query: "
        +searchText.current.value+
-       "only give me names of 5 movies , comma seperated list like the example ahead Example: ramesh, sukesh, naresh, rajesh, mukesh";
+       "only give me names of 5 movies , comma seperated list like the example ahead Example: ramesh, sukesh, naresh, rajesh, mukesh"
        const GPTResults = await openai.chat.completions.create({
         messages: [{ role: 'user', content: searchQuery }],
         model: 'gpt-3.5-turbo',
