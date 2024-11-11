@@ -4,8 +4,11 @@ import {useSelector } from 'react-redux'
 import { chageLanguage } from '../utils/configSlice';
 import { API_Options, SUPPORTED_LANGUAGES } from '../utils/constants';
 import { useDispatch } from 'react-redux';
-import openai from"../utils/openAi";
+// import openai from"../utils/openAi";
 import { addGptMovieResult } from '../utils/gptSlice';
+//  import { OPENAI_KEY } from './constants';
+ import OpenAI from 'openai';
+import useUserApiKey from '../Hooks/useUserApiKey';
 
 
 
@@ -13,6 +16,14 @@ import { addGptMovieResult } from '../utils/gptSlice';
 const GptSearchBar = () => {
     const dispatch=useDispatch();
     const langKey=useSelector((store)=>store.config.lang)
+
+    const apiKey=useUserApiKey();
+    
+
+     const openai = new OpenAI({
+      apiKey: apiKey,
+      dangerouslyAllowBrowser: true,
+    });
 
     const handleLanguageCHange=(e)=>{
         dispatch(chageLanguage(e.target.value))
@@ -65,6 +76,7 @@ const GptSearchBar = () => {
      <form 
      className='p-6 pt-[10%] grid grid-cols-12' 
      onSubmit={(e)=> e.preventDefault()}>
+      
      <select onChange={handleLanguageCHange}
           className='p-1 m-1 md:m-3 col-span-1 bg-gray-900 text-white  rounded-lg hidden lg:block ' >
             {SUPPORTED_LANGUAGES.map(lang=><option key={lang.identifier} value={lang.identifier}>

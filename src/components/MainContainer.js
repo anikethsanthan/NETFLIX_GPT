@@ -12,7 +12,7 @@ const MainContainer = () => {
       }
     const mainMovie=movies[getRandomNumber()];
 
-    const {original_title, overview, id} = mainMovie;
+    const {original_title, overview, id} = mainMovie
     
   return (
     <div className='  bg-black pt-[23%] md:pt-0'>
