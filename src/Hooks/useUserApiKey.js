@@ -13,7 +13,7 @@ const useUserApiKey = () => {
         if (!showGptSearch && apiKey==null && !isPromptShown) {
             const timer =setTimeout(()=>{
                 setIsPromptShown(true);
-            const key = prompt("Enter Your API key");
+            const key = prompt("Enter Your API key or visit (platform.openai.com) to create one");
             if (key) {
                 dispatch(addApiKey(key));
             }else{

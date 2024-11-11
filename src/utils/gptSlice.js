@@ -19,6 +19,10 @@ const gptSlice=createSlice({
             state.movieResults=movieResults;
 
         },
+        removeGPTMovieResult:(state)=>{
+            state.movieNames=null;
+            state.movieResults=null;
+        },
         addApiKey:(state,action)=>{
             state.apiKey= action.payload;
         },
@@ -30,5 +34,5 @@ const gptSlice=createSlice({
 
 
 })
-export const{toggleGptSearchView , addGptMovieResult, addApiKey,removeApiKey }=gptSlice.actions;
+export const{toggleGptSearchView , addGptMovieResult, addApiKey,removeApiKey ,removeGPTMovieResult }=gptSlice.actions;
 export default gptSlice.reducer;

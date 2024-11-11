@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addUser,removeUser } from '../utils/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { removeApiKey, toggleGptSearchView } from '../utils/gptSlice';
+import { removeApiKey, removeGPTMovieResult, toggleGptSearchView } from '../utils/gptSlice';
 
 const Header = () => {
   const navigate=useNavigate();
@@ -37,10 +37,12 @@ const Header = () => {
       
       dispatch(removeUser());
       dispatch(removeApiKey());
+      dispatch(removeGPTMovieResult());
     }).catch((error) => {
       // An error happened.
       dispatch(removeUser());
       dispatch(removeApiKey());
+      dispatch(removeGPTMovieResult());
     });
   }
   return (
