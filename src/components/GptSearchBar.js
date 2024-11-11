@@ -4,9 +4,7 @@ import {useSelector } from 'react-redux'
 import { chageLanguage } from '../utils/configSlice';
 import { API_Options, SUPPORTED_LANGUAGES } from '../utils/constants';
 import { useDispatch } from 'react-redux';
-// import openai from"../utils/openAi";
 import { addGptMovieResult } from '../utils/gptSlice';
-//  import { OPENAI_KEY } from './constants';
  import OpenAI from 'openai';
 import useUserApiKey from '../Hooks/useUserApiKey';
 
